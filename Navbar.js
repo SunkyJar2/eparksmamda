@@ -1,10 +1,12 @@
 import React from "react";
+
+import { useFonts } from "expo-font";
 import { StyleSheet, Text, View, Button, ScrollView } from "react-native";
 export default function Navbar(){
     return(
         <View style={nav.navbar}>
         <View style={{ marginTop: "12%" }}>
-          <Text style={nav.textHeading}>e-Park</Text>
+          <Text style={nav.textHeading}>E-Park</Text>
         </View>
       </View>
     );
@@ -21,6 +23,7 @@ export const nav = StyleSheet.create({
         fontWeight: "bold",
         marginVertical: "auto",
         marginLeft: "4%",
+        // fontFamily:'Righteous',
     },
   });
   

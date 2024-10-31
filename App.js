@@ -4,7 +4,10 @@ import { StyleSheet, Text, View, Button, ScrollView } from "react-native";
 import "react-native-gesture-handler";
 import HomeContainer from "./Home";
 import Navbar from "./Navbar";
+import Floors from "./Floors";
+
 export default function App() {
+
   return (
     <View style={styles.container}>
       <Navbar></Navbar>
@@ -12,7 +15,7 @@ export default function App() {
         <Text style={styles.textHeading}>Surabaya</Text>
       </View>
       <View style={{ flex: 10, width: "100%" }}>
-        <HomeContainer></HomeContainer>
+        <Floors></Floors>
       </View>
     </View>
   );
@@ -36,6 +39,7 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
     marginVertical: "auto",
     marginLeft: "4%",
+    fontFamily:"Righteous_400Regular"
   },
 
   text: {
@@ -50,5 +54,13 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
     marginVertical: 50,
   },
+ad: { 
+  flex: 4,
+  height: "25%",
+  width: "100%",
+  backgroundColor: "#50c773",
+
+}
+
 });
 

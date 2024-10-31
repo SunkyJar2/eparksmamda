@@ -14,6 +14,9 @@ export function HomeCard() {
 export default function HomeContainer() {
   return (
     <ScrollView style={{ width: "100%" }}>
+      <View style={home.ad}>
+        <Image source={require("./tp.jpeg")} style={home.adImage} />
+      </View>
       <HomeCard></HomeCard>
       <HomeCard></HomeCard>
       <HomeCard></HomeCard>
@@ -22,7 +25,7 @@ export default function HomeContainer() {
 }
 const home = StyleSheet.create({
   contentContainer: {
-    flex: 2,
+    flex: 1,
     width: "90%",
     alignSelf : "center",
     marginTop : "5%",
@@ -39,9 +42,14 @@ const home = StyleSheet.create({
     marginVertical: "2%",
 
   },
-price: {
+  price: {
   color: "#fff",
   fontSize: 18,
   marginBottom: "10%",
   },
+  ad: { 
+  },
+  adImage: {
+    height: 256,
+  },
 });
