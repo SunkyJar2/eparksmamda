@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { TouchableHighlight } from "react-native";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
+import { useFonts } from "expo-font";
 import "react-native-gesture-handler";
 
 export default function FloorCard(props) {
   const [used, setUsed] = useState(props.used);
-
+  useFonts({
+    Krona: require("../assets/fonts/KronaOne-Regular.ttf"),
+  });
   useEffect(() => {
     setUsed(props.used);
   }, [props.used]);
@@ -39,10 +42,9 @@ export default function FloorCard(props) {
 
 const floorCard = StyleSheet.create({
   card: {
-    height: "100%",
     paddingVertical: "2%",
     paddingHorizontal: "3%",
-    borderRadius: 3,
+    borderRadius: 12,
     marginVertical: "2%",
   },
   low: {
@@ -56,11 +58,16 @@ const floorCard = StyleSheet.create({
   },
   h1: {
     alignSelf: "flex-start",
-    fontSize: 20,
+    fontSize: 40,
     color: "#FFFFFF",
+    fontFamily: "Krona",
+    margin: "2%",
   },
   h2: {
-    fontSize: 10,
+    fontSize: 30,
     color: "#FFFFFF",
+    margin: "2%",
+    marginTop: "20%",
+    marginBottom: "2%",
   },
 });

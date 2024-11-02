@@ -7,14 +7,15 @@ export default function Floors() {
   // Show AppLoading until fonts are loaded
   return (
     <ScrollView style={floor.container}>
-      <FloorCard floor="1" used={0} slot={2}></FloorCard>
-      <FloorCard floor="2" used={1} slot={2}></FloorCard>
+      <FloorCard floor={1} used={0} slot={2}></FloorCard>
+      <FloorCard floor={2} used={1} slot={2}></FloorCard>
     </ScrollView>
   );
 }
 const floor = StyleSheet.create({
   container: {
-    marginVertical: "5%",
+    flex: 1,
+    height: "100%",
     marginHorizontal: "3%",
   },
 });

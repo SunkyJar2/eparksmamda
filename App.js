@@ -6,16 +6,12 @@ import HomeContainer from "./components/Home";
 import Navbar from "./components/Navbar";
 import Floors from "./components/Floors";
 import { useFonts } from "expo-font";
-import AppLoading from "expo-app-loading";
 export default function App() {
   const [fontsLoaded] = useFonts({
     Krona: require("./assets/fonts/KronaOne-Regular.ttf"),
   });
 
   // Wait until fonts are loaded before rendering
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
 
   return (
     <View style={styles.container}>

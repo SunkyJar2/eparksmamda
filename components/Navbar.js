@@ -2,21 +2,15 @@ import React from "react";
 
 import { StyleSheet, Text, View, Button, ScrollView } from "react-native";
 import { useFonts } from "expo-font";
-import AppLoading from "expo-app-loading";
 
 export default function Navbar() {
   const [fontsLoaded] = useFonts({
     Righteous: require("../assets/fonts/Righteous-Regular.ttf"),
   });
 
-  // Wait until fonts are loaded before rendering
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
-
   return (
     <View style={nav.navbar}>
-      <View>
+      <View style={{ marginTop: "10%" }}>
         <Text style={nav.textHeading}>e-Park</Text>
       </View>
     </View>
@@ -27,7 +21,7 @@ export const nav = StyleSheet.create({
     flex: 1.5,
     backgroundColor: "#005DE8",
     width: "100%",
-    paddingVertical: "2%",
+    paddingVertical: "5%",
   },
   textHeading: {
     color: "#fff",
@@ -35,6 +29,5 @@ export const nav = StyleSheet.create({
 
     fontFamily: "Righteous",
     marginLeft: "4%",
-    marginVertical: "2%",
   },
 });
