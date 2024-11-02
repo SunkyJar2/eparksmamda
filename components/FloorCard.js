@@ -39,7 +39,7 @@ export default function FloorCard(props) {
 
 const floorCard = StyleSheet.create({
   card: {
-    flex: 1,
+    height: "100%",
     paddingVertical: "2%",
     paddingHorizontal: "3%",
     borderRadius: 3,
