@@ -3,8 +3,7 @@
     "name": "e-park",
     "slug": "e-park",
     "version": "1.0.0",
-    "plugins": [
-      "expo-font"
-    ]
+    "plugins": ["expo-font"],
+    "assetBundlePatterns": ["assets/fonts/*"]
   }
 }

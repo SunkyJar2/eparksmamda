@@ -1,13 +1,20 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View, Button, ScrollView } from "react-native";
-import { useFonts } from "expo-font";
+import * as Font from "expo-font";
 
 export default function Navbar() {
-  const [fontsLoaded] = useFonts({
-    Righteous: require("../assets/fonts/Righteous-Regular.ttf"),
-  });
+  const [fontsLoaded, setFontsLoaded] = useState(false);
 
+  useEffect(() => {
+    Font.loadAsync({
+      Righteous: require("../assets/fonts/Righteous-Regular.ttf"),
+    }).then(() => setFontsLoaded(true));
+  }, []);
+
+  if (!fontsLoaded) {
+    // Avoid disrupting hook order by placing this condition in the return statement
+    return <View />;
+  }
   return (
     <View style={nav.navbar}>
       <View style={{ marginTop: "10%" }}>

@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { TouchableHighlight } from "react-native";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
-import { useFonts } from "expo-font";
+import * as Font from "expo-font";
 import "react-native-gesture-handler";
 
 export default function FloorCard(props) {
   const [used, setUsed] = useState(props.used);
-  useFonts({
-    Krona: require("../assets/fonts/KronaOne-Regular.ttf"),
-  });
+  const [fontsLoaded, setFontsLoaded] = useState(false);
+
+  useEffect(() => {
+    Font.loadAsync({
+      Krona: require("../assets/fonts/KronaOne-Regular.ttf"),
+    }).then(() => setFontsLoaded(true));
+  }, []);
   useEffect(() => {
     setUsed(props.used);
   }, [props.used]);
@@ -25,6 +29,10 @@ export default function FloorCard(props) {
     }
   };
 
+  if (!fontsLoaded) {
+    // Avoid disrupting hook order by placing this condition in the return statement
+    return <View />;
+  }
   const availableState = getAvailableState();
   const stateStyles = floorCard[availableState];
 
